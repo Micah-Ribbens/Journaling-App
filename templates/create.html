@@ -1,0 +1,14 @@
+<a href="/home">Home</a>
+<h1>Create Notes</h1>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">submit</button>
+    <h2>{{text}}</h2>
+    {% if hasDuplicate %}
+        <h3>A note with these exact words has already been created are you sure you want to create this?</h3>
+        <div>
+            <button type="submit">Yes</button><button type="submit">No</button>
+        </div>
+    {% endif %}
+</form>
