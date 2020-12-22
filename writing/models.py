@@ -13,4 +13,6 @@ class notes(models.Model):
         default=User,
         on_delete=models.CASCADE,
         null=True)
-        
+    parent = models.TextField(default="Talent is Never Enough")
+    title = models.TextField(default="Exercise")
+

@@ -1,0 +1,8 @@
+<a href="http://127.0.0.1:8000/home">Home</a>
+<pre>
+</pre>
+<h1>Folders:</h1>
+{% for parent in parents %}
+    <p></p>
+    <p><a href='titles/{{ parent }}/'>{{parent}}</a></p>
+{% endfor %}
