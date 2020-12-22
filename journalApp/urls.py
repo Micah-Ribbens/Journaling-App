@@ -16,11 +16,25 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from writing import views
-from home.views import home_view
+from home.views import (
+    home_view,
+    note_view,
+    titles_view,
+    parent_view,
+    default_view,
+
+)
+from writing.models import notes
+
+    
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('create', views.create_view.as_view(), name='create'),
+    path('', default_view.as_view(), name="default"),
     path('home', home_view.as_view(), name="home"),
-    path('page_created', views.page_created.as_view(), name="page_created")
+    path('note/<int:id>/', note_view.as_view(), name="notes"),
+    path('page_created', views.page_created.as_view(), name="page_created"),
+    path('titles/<str:parent>/', titles_view.as_view(), name="titles"),
+    path('parent', parent_view.as_view(), name="parent")
 ]

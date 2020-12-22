@@ -13,7 +13,7 @@ class ProductForm(forms.ModelForm):
     )
     class Meta:
         model = notes
-        fields = ('description',)
+        fields = ('description', 'title', 'parent',)
     
     def clean_description(self, *args, **kwargs):
         description = self.cleaned_data.get("description")

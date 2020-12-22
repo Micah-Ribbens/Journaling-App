@@ -1,0 +1,7 @@
+<a href="http://127.0.0.1:8000/home">Home</a>
+<pre>
+</pre>
+<h1>Titles:</h1>
+{% for note in allNotes %}
+    <p><a href='http://127.0.0.1:8000/note/{{note.id}}/'>{{note.title}}</a> Date created: {{note.date}}</p>
+{% endfor %}
